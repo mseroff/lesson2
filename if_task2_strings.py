@@ -13,6 +13,8 @@ def comp_str(first_str, second_str):
             return 3
         elif len(first_str) > len(second_str):
             return 2
+        elif len(first_str) < len(second_str):
+            return 'Условие задачей не предусмотрено'
     else:
         return 0
 
@@ -20,3 +22,4 @@ print(comp_str('SomeString',0))
 print(comp_str('SomeString','SomeString'))
 print(comp_str('LongSomeString','SomeString'))
 print(comp_str('SomeString','learn'))
+print(comp_str('SomeString','LongSomeString'))

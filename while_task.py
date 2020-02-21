@@ -5,6 +5,7 @@
 #Пользователь: Что делаешь?
 #Программа: Программирую
 
+
 ask_answer_dict = {"Как дела?": "Хорошо!", "Что делаешь?": "Программирую"} 
 
 def ask_user():
@@ -15,9 +16,8 @@ ask_user()
 
 def ask_user_pro(ask_answer_dict):
     while True:
-        answer = input('Задайте вопрос или попращайтесь написав Пока:\n')
-        if answer in ask_answer_dict:
-            print(ask_answer_dict[answer])
+        answer = input('Задайте вопрос или попращайтесь, написав Пока:\n')
+        print(ask_answer_dict.get(answer,'Я даже не знаю, что ответить...'))
         if answer == 'Пока':
             break
 

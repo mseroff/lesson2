@@ -37,21 +37,10 @@ marks = [
 all_marks_of_school = 0
 count = 0
 for i in marks:
-    for j in i['scores']:
-        all_marks_of_school += j
-        count += 1
+    all_marks_of_school += sum(i['scores'])
+    count += len(i['scores'])
+    print('Средний бал учащихся по классу {}: {}'.format(i['school_class'], (sum(i['scores'])/len(i['scores']))))
 print('Средний учащихся бал по школе: {}'.format(all_marks_of_school/count))
-
-
-for i in marks:
-    all_marks_of_school = 0
-    count = 0
-    for j in i['scores']:
-        all_marks_of_school += j
-        count += 1
-    print('Средний бал учащихся по классу {}: {}'.format(i['school_class'], (all_marks_of_school/count)))
-    
-
 
 
 

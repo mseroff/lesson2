@@ -7,8 +7,7 @@ def ask_user(ask_answer_dict):
     while True:
         try:
             answer = input('Задайте вопрос:\n')
-            if answer in ask_answer_dict:
-                print(ask_answer_dict[answer])
+            print(ask_answer_dict.get(answer, 'Не понимаю'))
         except KeyboardInterrupt:
             print('Пока!')
             break

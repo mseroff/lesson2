@@ -15,7 +15,6 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
                     filename='bot.log'
                     )
 
-today_date = datetime.datetime.today().strftime("%Y/%m/%d")
 
 def greet_user(bot, update):
     text = 'Вызван /start'
@@ -24,6 +23,7 @@ def greet_user(bot, update):
 
 def planet_constellation(bot, update):
     u_m = update.message
+    today_date = datetime.datetime.today().strftime("%Y/%m/%d")
 
     planet_dict = {
                     'Mars': ephem.Mars(today_date),
@@ -44,6 +44,8 @@ def planet_constellation(bot, update):
                 logging.info("User: %s, Chat id: %s, Message: %s", u_m.chat.username, u_m.chat.id, u_m.text)
                 print(u_m)
                 u_m.reply_text(user_text)
+            else:
+                u_m.reply_text('Planet {} is not found, please try again.'.format(planet_name))
 
 
 def main():
